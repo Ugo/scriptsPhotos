@@ -3,8 +3,14 @@
 # those 2 lines are used to be able to manage folders with white spaces in their name
 IFS="
 "
+# take the folder as the first parameter, if nothing is defined the current folder will be used
+dir=$1
+if [ -z $dir ]
+then
+	dir="."
+fi
 
-cd /home/ugo/temp/TO_DELETE/test
+cd $dir
 
 # select all the leaf folders (they should be the only one to contain pictures)
 for dir in $( find . -type d -links 2 -print ); do
