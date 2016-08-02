@@ -8,11 +8,14 @@ md5sum * > checklist.chk
 # basic check on the list of checksums
 md5sum -c checklist.chk
 
+# compute all md5 sums of the folder except for chk files
+find . -type f ! -iname \*.chk -exec md5sum '{}' ';' | sort > checklist.chk
+
 # in each folder, the following should be run (it should be more general with more file formats)
 find . -type f -iname \*.jpg -exec md5sum '{}' ';' > checklist.chk
 
 # in the top folder, the following should be run
-find . -type f -iname \*.chk -exec md5sum '{}' ';' > checklist.bigchk
+find . -type f -iname \*.chk -exec md5sum '{}' ';' | sort > checklist.bigchk
 
 # to get only leaf level folders:
 find . -type d -links 2
