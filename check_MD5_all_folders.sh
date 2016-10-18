@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# those 2 lines are used to be able to manage folders with white spaces in their name
+# those 2  lines are used to be able to manage folders with white spaces in their name
 IFS="
 "
 # take the folder as the first parameter, if nothing is defined the current folder will be used
