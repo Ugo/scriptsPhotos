@@ -16,6 +16,7 @@ cd $dir
 for dir in $( find . -type d -links 2 -print ); do
 	cd $dir
 	echo "Checking md5 values for folder" $dir
-	find . -type f -name \*.chk -exec md5sum -c '{}' ';'
+    # find the check file of the folder and run a check from that file ('-c' option) on files in the folder
+	find . -type f -name \*.md5 -exec md5sum -c '{}' ';'
 	cd -
 done

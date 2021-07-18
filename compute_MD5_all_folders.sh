@@ -18,6 +18,6 @@ for dir in $( find . -type d -links 2 -print ); do
 	cd $dir
 	echo "Computing md5 sum for folder" $dir
 	# find all files that are not chk and compute their md5 sum
-	find . -type f ! -name \*.chk -exec md5sum '{}' ';' | sort > checklist.chk
+	find . -type f ! -name \*.md5 -exec md5sum '{}' ';' | sort > checkMD5Files.md5
 	cd -
 done
