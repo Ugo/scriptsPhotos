@@ -29,7 +29,7 @@ find . -type f -exec file {} \; | awk -F: '{ if ($2 ~/image/) print $1}'
 # check duplicates
 find . -type f -exec md5sum '{}' ';' | sort | uniq --all-repeated=separate -w 15 > duplicates.txt
 
-# remove all md5 files
+# delete all md5 files
 find . -type f -iname \*.md5 -exec rm {} \;
 
 # copy all the check files but keep the folders structures:

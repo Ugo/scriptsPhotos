@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# in the top folder, the following should be run
+find . -type f -iname \*.md5 -exec rm {} \;
