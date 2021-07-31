@@ -1,0 +1,22 @@
+#!/bin/bash
+# example: pix_compare_folders /home/folder1 /home/folder2
+
+MAIN=$(pwd)
+FOLDER_1=$1
+FOLDER_2=$2
+
+cd $FOLDER_1
+bash compute_MD5_all_folders
+cp checklist.chk $MAIN/folder1.txt
+rm checklist.chk
+
+cd $FOLDER_2
+bash compute_MD5_all_folders
+cp checklist.chk $MAIN/folder2.txt
+rm checklist.chk
+
+cd $MAIN
+meld folder1.txt folder2.txt
+
+rm folder1.txt
+rm folder2.txt

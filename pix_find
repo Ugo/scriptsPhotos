@@ -1,0 +1,6 @@
+#!/bin/bash
+# example: pix_find pix_name.jpg
+
+FILE_NAME=$1
+
+find /home/ugo/Pictures -name $FILE_NAME -type f -print

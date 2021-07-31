@@ -1,0 +1,22 @@
+#!/bin/bash
+# example: pix_compare_folders /home/folder1 /home/folder2
+
+MAIN=$(pwd)
+FOLDER_1=$1
+FOLDER_2=$2
+
+cd $FOLDER_1
+tree  -s --sort=name -I *.txt > folder1.txt
+cp folder1.txt $MAIN
+rm folder1.txt
+
+cd $FOLDER_2
+tree  -s --sort=name -I *.txt > folder2.txt
+cp folder2.txt $MAIN
+rm folder2.txt
+
+cd $MAIN
+meld folder1.txt folder2.txt
+
+rm folder1.txt
+rm folder2.txt
