@@ -7,13 +7,13 @@ FOLDER_2=$2
 
 cd $FOLDER_1
 bash compute_MD5_all_folders
-cp checklist.chk $MAIN/folder1.txt
-rm checklist.chk
+cp checkMD5Files.md5 $MAIN/folder1.txt
+rm checkMD5Files.md5
 
 cd $FOLDER_2
 bash compute_MD5_all_folders
-cp checklist.chk $MAIN/folder2.txt
-rm checklist.chk
+cp checkMD5Files.md5 $MAIN/folder2.txt
+rm checkMD5Files.md5
 
 cd $MAIN
 meld folder1.txt folder2.txt
